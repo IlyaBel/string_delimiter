@@ -27,8 +27,8 @@ std::string JoinFunc(T begin, T end, const std::string& delim){
     else{
         std::stringstream result;
         std::accumulate(std::next(begin), end, std::ref(result << *begin),
-            [&delim](std::ostream& arg1, int arg2) -> std::ostream&
-            {return  arg1 << delim << arg2;});
+            [&delim](std::ostream& stream, const auto& arg) -> std::ostream&
+            {return  stream << delim << arg;});
         return result.str();
     }
 }

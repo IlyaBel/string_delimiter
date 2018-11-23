@@ -1,4 +1,3 @@
-
 #include "string_delimiter.h"
 #include <iostream>
 #include <vector>

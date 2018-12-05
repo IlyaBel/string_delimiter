@@ -8,16 +8,18 @@
 
 template <class T>
 std::string JoinLoop(T begin, T end, const std::string& delim){
-    T tmp = begin;
-    std::stringstream result;
-
-    while (tmp != end) {
-        result << *tmp;
-        if (++tmp != end)
-            result << delim;
+    if (begin == end)
+        return std::string{};
+    else {
+        T tmp = begin;
+        std::stringstream result;
+        while (tmp != end) {
+            result << *tmp;
+            if (++tmp != end)
+                result << delim;
+        }
+        return result.str();
     }
-
-    return result.str();
 }
 
 template <class T>
